@@ -1,11 +1,8 @@
 import os
-from decouple import config
+# from decouple import config
 import sentry_sdk
 from bottle import Bottle
 from sentry_sdk.integrations.bottle import BottleIntegration
-
-# with open("Sentry_autorization.txt") as f:
-#     key, project_id = f.read().strip().split()
 
 # key = config('key', default='')
 # project_id = config('project_id', default='')    
@@ -30,15 +27,13 @@ def index():
 
 @app.route('/success')
 def page_succes():
-    return "<h2>This is a success! Status 200</h2>"
+    return  '''<h2>This is a success! Status 200</h2>
+               <span>Это Вы удачно зашли!</span>'''
 
 @app.route('/fail')
 def page_fail():
-    raise RuntimeError('There is an error! Status 500')
+    raise RuntimeError('Это провал. Вы ошиблись номером, дружище... Вы ошиблись...')
     return
-  
-#app.run(host='localhost', port=8080)
-
 
 if os.environ.get("APP_LOCATION") == "heroku":
     app.run(
