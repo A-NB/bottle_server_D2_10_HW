@@ -7,11 +7,12 @@ from sentry_sdk.integrations.bottle import BottleIntegration
 # with open("Sentry_autorization.txt") as f:
 #     key, project_id = f.read().strip().split()
 
-key = config('key', default='')
-project_id = config('project_id', default='')    
+# key = config('key', default='')
+# project_id = config('project_id', default='')    
 
 sentry_sdk.init(
-    dsn=f"https://{key}@sentry.io/{project_id}",
+    #dsn=f"https://{key}@sentry.io/{project_id}",
+    dsn=os.environ['SENTRY_DSN'],
     integrations=[BottleIntegration()]
 )
 
