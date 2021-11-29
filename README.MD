@@ -6,11 +6,14 @@
 
 Приложение использует Ваши учётные данные, полученные при регистрации на sentry.io. Для того, чтобы сохранить конфиденциальность Ваших данных, используется следующий метод (немного об этом [здесь](https://devcenter.heroku.com/articles/sentry#integrating-with-python-or-django)). Необходимо создать системную переменную *SENTRY_DSN*, которая будет содержать путь доступа к Вашему проекту на sentry.io, включающий Ваш ключ авторизации и id проекта:
 <center><span style="color:blue">https://<span style="color:red"><b>Ваш_ключ</b></span>@sentry.io/<span style="color:red"><b>id_проекта</b></span></span></center>
+  
 Это можно сделать, запустив следующий код:
+  
 ```
 import os
 os.environ['SENTRY_DSN'] = 'https://Ваш_ключ@sentry.io/id_проекта'
 ```
+  
 После этого желательно перезагрузить компьютер.
 
 Чтобы добавить такую же переменную среды в приложение на heroku.com, нужно зайти на страницу `https://dashboard.heroku.com/apps/имя_Вашего_приложения/settings` и кликнуть по кнопке <span style="color:white;background:#79589f;">&nbsp;Reveal Config Vars </span>, после чего в левом текстовом поле ввести имя переменной, а в правом - её значение.
