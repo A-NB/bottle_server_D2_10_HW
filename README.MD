@@ -5,7 +5,7 @@
 Для правильной работы приложения необходимо зарегистрироваться на платформах sentry.io и heroku.com. Для размещения сервера на heroku.com полезно ознакомиться с [этой](https://github.com/chucknado/bottle_heroku_tutorial) инструкцией, [этой](https://devcenter.heroku.com/articles/git#http-git-authentication) (обе на английском) и по этому адресу: `https://github.com/ancatmara/learnpython2018/blob/master/Lessons/Heroku и командная строка/13a. Heroku.md`(на русском). Сервер также можно развернуть локально (без регистрации на heroku.com), тогда он будет доступен в браузере по адресу: http://localhost:8080
 
 Приложение использует Ваши учётные данные, полученные при регистрации на sentry.io. Для того, чтобы сохранить конфиденциальность Ваших данных, используется следующий метод (немного об этом [здесь](https://devcenter.heroku.com/articles/sentry#integrating-with-python-or-django)). Необходимо создать системную переменную *SENTRY_DSN*, которая будет содержать путь доступа к Вашему проекту на sentry.io, включающий Ваш ключ авторизации и id проекта:
-<center><span style="color:blue">https://<span style="color:red"><b>Ваш_ключ</b></span>@sentry.io/<span style="color:red"><b>id_проекта</b></span></span></center>
+#### <center><span style="color:blue">https://<span style="color:red"><b>Ваш_ключ</b></span>@sentry.io/<span style="color:red"><b>id_проекта</b></span></span></center>
   
 Это можно сделать, запустив следующий код:
   
