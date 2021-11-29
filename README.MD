@@ -29,4 +29,11 @@ os.environ['SENTRY_DSN'] = 'https://Ваш_ключ@sentry.io/id_проекта'
 Чтобы добавить такую же переменную среды в приложение на [heroku.com](https://heroku.com), нужно зайти на страницу `https://dashboard.heroku.com/apps/имя_Вашего_приложения/settings` и кликнуть по кнопке <span style="color:white;background:#79589f;">&nbsp;Reveal Config Vars </span>, после чего в левом текстовом поле ввести имя переменной, а в правом - её значение.
 
 Это приложение можно протестировать по адресу: https://floating-atoll-33455.herokuapp.com/ (главная страница). Кроме того, доступны ещё страницы:
-https://floating-atoll-33455.herokuapp.com/success (текст "This is a success! Status 200") и https://floating-atoll-33455.herokuapp.com/fail (при переходе по этому адресу сервер генерирует исключение RuntimeError и возвращает код ошибки 500).
+https://floating-atoll-33455.herokuapp.com/success (текст "This is a success! Status 200") и https://floating-atoll-33455.herokuapp.com/fail
+
+При переходе на страницу `/fail` сервер генерирует исключение RuntimeError и возвращает код ошибки 500. При этом на странице Вашего проекта в [sentry.io](https://sentry.io) Вы увидите панель с информацией об ошибке:
+
+```
+RuntimeError __main__.page_fail
+There is an error! Status 500
+```
